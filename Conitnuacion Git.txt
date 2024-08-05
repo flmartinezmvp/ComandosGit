@@ -1,0 +1,184 @@
+continuando los comandos
+
+                                     GIT LOG
+
+Este comando muestra los commit realizados, mostrando algunas caracteristicas,
+como lo son el hash, el correo y el usuario de quien realiza el commit
+
+git log -p -2 
+muestra los cambios de los ultimos 2 commits, en que han cambiado
+
+git log --stat 
+muestra estadisticas abreviadas de cada commit
+
+git log --stat -2
+muestra estadisticas abreviadas de cada commit de los ultimos 2
+imprime debajo de cada entrada de confirmación una lista de archivos modificados,
+cuántos archivos se cambiaron y cuántas líneas de esos archivos se agregaron 
+y eliminaron.
+
+git log --oneline
+Muestra los commit en una sola linea
+
+				format
+sE PUEDE ESPECIFICAR SUPROPIO FORMATO
+$ git log --pretty=format:"%h - %an, %ar : %s"
+
+ca82a6d - Scott Chacon, 6 years ago : Change version number
+085bb3b - Scott Chacon, 6 years ago : Remove unnecessary test
+a11bef0 - Scott Chacon, 6 years ago : Initial commit
+
+LISTA DE LAS MAS USADAS
+
+%H->Confirmar hash
+
+%h->Hash de confirmación abreviado
+
+%T->Hash de árbol
+
+%t->Hash de árbol abreviado
+
+%P->Hashes de los padres
+
+%p->Hashes de padres abreviados
+
+%an->Nombre del autor
+
+%ae->Correo electrónico del autor
+
+%ad->Fecha del autor (el formato respeta el --date=option)
+
+%ar->Fecha del autor, relativa
+
+%cn->Nombre del colaborador
+
+%ce->Correo electrónico del colaborador
+
+%cd->Fecha del compromiso
+
+%cr->Fecha del committer, relativa
+
+%s->Sujeto
+
+
+					GRAPH
+Util en la visibilida de los commit
+
+$ git log --pretty=format:"%h %s" --graph
+
+
+					comandos comunes con LOG
+
+-p
+
+Muestra el parche introducido con cada confirmación.
+
+--stat
+
+Mostrar estadísticas de los archivos modificados en cada confirmación.
+
+--shortstat
+
+Mostrar sólo las líneas modificadas/inserciones/eliminaciones del --statcomando.
+
+--name-only
+
+Mostrar la lista de archivos modificados después de la información de confirmación.
+
+--name-status
+
+Muestra también la lista de archivos afectados con información agregada/modificada/eliminada.
+
+--abbrev-commit
+
+Mostrar sólo los primeros caracteres de la suma de comprobación SHA-1 en lugar de los 40.
+
+--relative-date
+
+Muestra la fecha en un formato relativo (por ejemplo, “hace 2 semanas”) en lugar de utilizar el formato de fecha completo.
+
+--graph
+
+Muestra un gráfico ASCII de la rama y el historial de fusión junto a la salida del registro.
+
+--pretty
+
+Muestra las confirmaciones en un formato alternativo. Los valores de opción incluyen oneline, short, full, fullery format(donde especificas tu propio formato).
+
+--oneline
+
+Forma abreviada de " --pretty=oneline --abbrev-commitusado juntos"
+
+
+					FILTROS(--sincey --until) desde - hasta
+
+
+Muestra los commit realizados hace 2 semanas
+$ git log --since=2.weeks
+
+Muestra los commit realizados entre las fechas indicadas
+$git log --since="2024-08-03" --until="2024-08-03 23:59:59"
+
+
+					FILTROS(--author --grep)
+
+busca por el autor
+$git log --author="flmartinez@gmail.com"
+
+busca por palabras clave
+$git log --grep="modi"
+
+
+					FILTROS(--all-match)
+
+realiza la busqueda de los criterios que coincidan con grep y el autor, gracias
+al allmatch(el grep es sesible a mayusculas y minusculas)
+$git log --grep="Modi" --author="flmartinez" --allmatch
+
+					FILTROS
+Es una herramienta muy útil para rastrear la historia de un código específico dentro de un repositorio.
+$ git log -S function
+
+
+Es importante cuando se quiere conocer los commits que se han hecho en un archivo
+en especificio 
+$ git log -- ruta
+
+					OTROS COMANDOS
+-<n>
+
+Mostrar sólo las últimas n confirmaciones.
+
+--since,--after
+
+Limite las confirmaciones a aquellas realizadas después de la fecha especificada.
+
+--until,--before
+
+Limite las confirmaciones a aquellas realizadas antes de la fecha especificada.
+
+--author
+
+Mostrar únicamente las confirmaciones en las que la entrada del autor coincida con la cadena especificada.
+
+--committer
+
+Mostrar únicamente confirmaciones en las que la entrada del confirmador coincida con la cadena especificada.
+
+--grep
+
+Mostrar únicamente confirmaciones con un mensaje de confirmación que contenga la cadena.
+
+-S
+
+Mostrar únicamente confirmaciones que agreguen o eliminen código que coincida con la cadena.
+
+
+Ejemplo:
+Por ejemplo, si desea ver qué confirmaciones que modifican archivos de prueba en el historial del código
+fuente de Git fueron confirmadas por Junio ​​Hamano en el mes de octubre de 2008 y no son confirmaciones de fusión,
+puede ejecutar algo como esto:
+ 
+$ git log --pretty="%h - %s" --author='Junio C Hamano' --since="2008-10-01" \
+   --before="2008-11-01" --no-merges -- t/
+
