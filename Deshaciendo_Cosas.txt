@@ -1,11 +1,21 @@
                                             AMEND
 $git commit --amend
 
-se usa cuando se confirma demasiado pronto y posiblmente se olvida agregar algunos archivos,
+se usa cuando se confirma demasiado pronto y posiblemente se olvida agregar algunos archivos,
 o se confunde el mensahe de confirmacion. Abre un editor de texto, permitiendo modificarlo
 
 Ten en cuenta que este comando reescribe el historial, lo cual puede causar problemas si ya
 has compartido ese commit con otros (por ejemplo, si ya lo has enviado a un repositorio remoto).
 Es recomendable usar --amend solo en commits locales que no hayan sido empujados a un repositorio compartido.
 
+para modificar el mensaje, solamente se ingresa el comando y se sobreescribe
+para agregar el archivo faltante, primero se agrega con $git add archivoFaltante.txt y despues se usa el comando $git commit --amend
 ---------------------------------------------------------------------------------------------------------------
+
+                                    git reset HEAD <file>
+para deshacer el archivo del area de preparación
+
+                                $ git checkout -- <archivo>
+Deshacer la modificacion de un archivo modificado
+
+--este es mi ward
