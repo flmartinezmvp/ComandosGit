@@ -8,4 +8,4 @@ Ten en cuenta que este comando reescribe el historial, lo cual puede causar prob
 has compartido ese commit con otros (por ejemplo, si ya lo has enviado a un repositorio remoto).
 Es recomendable usar --amend solo en commits locales que no hayan sido empujados a un repositorio compartido.
 
-
+---------------------------------------------------------------------------------------------------------------
