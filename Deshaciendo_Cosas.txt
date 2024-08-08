@@ -1,0 +1,11 @@
+                                            AMEND
+$git commit --amend
+
+se usa cuando se confirma demasiado pronto y posiblmente se olvida agregar algunos archivos,
+o se confunde el mensahe de confirmacion. Abre un editor de texto, permitiendo modificarlo
+
+Ten en cuenta que este comando reescribe el historial, lo cual puede causar problemas si ya
+has compartido ese commit con otros (por ejemplo, si ya lo has enviado a un repositorio remoto).
+Es recomendable usar --amend solo en commits locales que no hayan sido empujados a un repositorio compartido.
+
+
