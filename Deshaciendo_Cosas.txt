@@ -12,10 +12,13 @@ para modificar el mensaje, solamente se ingresa el comando y se sobreescribe
 para agregar el archivo faltante, primero se agrega con $git add archivoFaltante.txt y despues se usa el comando $git commit --amend
 ---------------------------------------------------------------------------------------------------------------
 
-                                    git reset HEAD <file>
-para deshacer el archivo del area de preparación
+                                $ git restore --staged archivo.txt
+para dehacer el archivo del area de preparacion
+
+                                $ git restore CONTRIBUTING.md
+Para deshacer las modificacion y dejar el archivo como el ultimo commit se hizo o se clonó.
 
                                 $ git checkout -- <archivo>
 Deshacer la modificacion de un archivo modificado que no esté en el area de trabajo
 
---este es mi ward
+2.5 inicio
