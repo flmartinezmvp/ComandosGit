@@ -16,6 +16,6 @@ para agregar el archivo faltante, primero se agrega con $git add archivoFaltante
 para deshacer el archivo del area de preparación
 
                                 $ git checkout -- <archivo>
-Deshacer la modificacion de un archivo modificado
+Deshacer la modificacion de un archivo modificado que no esté en el area de trabajo
 
 --este es mi ward
