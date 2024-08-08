@@ -1,0 +1,65 @@
+                                            AMEND
+$git commit --amend
+
+se usa cuando se confirma demasiado pronto y posiblemente se olvida agregar algunos archivos,
+o se confunde el mensahe de confirmacion. Abre un editor de texto, permitiendo modificarlo
+
+Ten en cuenta que este comando reescribe el historial, lo cual puede causar problemas si ya
+has compartido ese commit con otros (por ejemplo, si ya lo has enviado a un repositorio remoto).
+Es recomendable usar --amend solo en commits locales que no hayan sido empujados a un repositorio compartido.
+
+para modificar el mensaje, solamente se ingresa el comando y se sobreescribe
+para agregar el archivo faltante, primero se agrega con $git add archivoFaltante.txt y despues se usa el comando $git commit --amend
+---------------------------------------------------------------------------------------------------------------
+
+                                $ git restore --staged archivo.txt
+para dehacer el archivo del area de preparacion
+
+                                $ git restore CONTRIBUTING.md
+Para deshacer las modificacion y dejar el archivo como el ultimo commit se hizo o se clonó.
+
+                                $ git checkout -- <archivo>
+Deshacer la modificacion de un archivo modificado que no esté en el area de trabajo
+
+2.5 inicio
+
+                                                GIT REMOTE
+$git remote
+Muestra la lista de servidores remotos
+
+$git remote -v
+muestra las URL que Git ha almacenado
+
+                                        AGREGAR REPOSITORIOS REMOTOS
+Gracias al nombre corto se puede identificar en vez de ingresar toda la url completa
+git remote add <shortname> <url> -> $ git remote add pb https://github.com/paulboone/ticgit 
+
+                                        ACTUALIZAR REPOSITORIO 
+
+$ git fetch <remote>
+Este comando descarga todos los datos al repositorio local y no los fusiona
+
+git fetch: Solo descarga la información del repositorio remoto y la almacena en tu repositorio local sin modificar tu área de trabajo.
+git pull: Descarga la información del repositorio remoto y luego fusiona esos cambios con tu rama local actual.
+
+                                                    GIT PUSH
+$git push origin master
+Cuando se quiere enviar los cambios al repositorio remoto por primera vez
+$git push 
+Para subir cambios y ya se han subido cambios anteriormente
+
+$git remote show origin
+Si desea ver más información sobre un control remoto en particular
+
+$git remote show
+Este comando muestra a qué rama se envía automáticamente cuando se ejecuta git pushmientras se está en determinadas ramas. También
+muestra qué ramas remotas en el servidor aún no tienes, qué ramas remotas tienes que se han eliminado del servidor y varias ramas
+locales que pueden fusionarse automáticamente con su rama de seguimiento remoto cuando ejecutas git pull.
+
+
+                                CAMBIAR EL NOMBRE DE UN CONTROL REMOTO
+$git remote rename pb nuevoName
+
+                                ELIMINAR UN CONTROL REMOTO
+$ git remote rm nuevoName
+
