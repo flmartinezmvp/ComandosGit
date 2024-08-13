@@ -110,7 +110,28 @@ $git tag -d v1.1
 $git push origin --delete v1.1
 Eiminar etiqueta del servidor remoto
 
+                                                ALIAS
+puedes configurar fácilmente un alias para cada comando usando $git config
 
+$ git config --global alias.co checkout
+$git co
+
+$ git config --global alias.unstage 'reset HEAD --'
+$git unstage
+Tambin se pueden crear alias con comandos que se consideren utiles
+corregir el problema de usabilidad que encontraste al sacar un archivo
+de la etapa de prueba
+estos comandos son lo mismo: 
+$ git unstage fileA
+$ git reset HEAD -- fileA
+
+$ git config --global alias.last 'log -1 HEAD'
+$git alias
+ver el último commit agregado
+
+$git config --global alias.vs '!code .'
+Se usa para abrir visual studio code con comandos git, siendo este un 
+comando externo de git
 
 
 

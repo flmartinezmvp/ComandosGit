@@ -132,7 +132,7 @@ $git log --grep="modi"
 					FILTROS(--all-match)
 
 realiza la busqueda de los criterios que coincidan con grep y el autor, gracias
-al allmatch(el grep es sesible a mayusculas y minusculas)
+al allmatch(el grep es sensible a mayusculas y minusculas)
 $git log --grep="Modi" --author="flmartinez" --allmatch
 
 					FILTROS
