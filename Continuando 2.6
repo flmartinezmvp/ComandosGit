@@ -63,3 +63,34 @@ $git remote rename pb nuevoName
                                 ELIMINAR UN CONTROL REMOTO
 $ git remote rm nuevoName
 
+
+                                        ETIQUETAS O TAGS
+
+$git tag
+Muestra las ETIQUETAS
+$git tag -l
+muestra la lista de las ETIQUETAS, se muestra en orden alfabetico, este orden no tiene importancia recomendable
+
+$ git tag -l "v1.8.5*"
+muestra la lista de etiquetas que coinciden con un patrón en particular
+
+                                EXISTEN DOS TIPOS DE ETIQUETAS
+ETIQUETAS ANOTADAS -> La forma más sencilla es especificar -a cuándo se ejecuta el tagcomando:
+$git tag -a v1.1 -m "my version 1.1" -> el mensaje es opcional, pero si no se ingresa se abrirá el código
+
+ETIQUETAS LIGERAS O LIVIANAS -> NO CAMBIA, SOLO SE PROPORCIONA UN NOMBRE A LA ETIQUETA y no muestra los detalles al 
+realizar $git show v1.1
+
+$git show v1.1
+Muestra los datos de la etiqueta junto con la confirmacion que se etiquetó.
+Esto muestra la información del etiquetador, la fecha en que se etiquetó la confirmación y el mensaje de anotación
+antes de mostrar la información de la confirmación.
+
+$git tag -a v1.0 8f0a2
+Agregar una etiqueta a un commit anterior
+
+---COMANDO NUEVO---
+$git log --pretty=oneline
+
+
+
